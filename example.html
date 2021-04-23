@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,59 @@
 
     <title>gsap選單</title>
 </head>
+
 <body>
-   <div class="wrapper">
-       <div class="bar">
-           <div class="humbar"></div>
-       </div>
-       <h2>使用gsap製作選單</h2>
-       <!-- 隱藏選單 -->
-       <nav>
-           <div class="close_bar">
-               <div></div>
-           </div>
-           <ul>
-               <li class="item"><a href="#">首頁</a></li>
-               <li class="item"><a href="#">關於我們</a></li>
-               <li class="item"><a href="#">專案</a></li>
-               <li class="item"><a href="#">聯絡我們</a></li>
-           </ul>
-       </nav>
-   </div>
+    <div class="wrapper">
+        <div id="" class="bar">
+            <div class="humbar"></div>
+        </div>
+        <h2>使用gsap製作選單</h2>
+        <!-- 隱藏選單 -->
+        <nav>
+            <div class="close_bar">
+                <div></div>
+            </div>
+            <ul>
+                <li class="item"><a href="#">首頁</a></li>
+                <li class="item"><a href="#">關於我們</a></li>
+                <li class="item"><a href="#">專案</a></li>
+                <li class="item"><a href="#">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
- <script>
-   
+<script>
+    var open = document.querySelector('.bar');
+    var close = document.querySelector('.close_bar');
+
+    var tl = new TimelineMax();
+    tl.to('nav', .5, {
+        right: 0
+    }).to('nav', .5, {
+        height: '100vh'
+    }).staggerTo('nav ul li', .5, {
+        opacity: 1,
+        delay: .4
+    }, .3).to('.close_bar' , .4 , {
+        opacity: 1,
+        delay: -0.3
+    });
+    
+    tl.stop();
+
+    open.addEventListener('click' , function(){
+        tl.play();
+    });
+
+    close.addEventListener('click' , function(){
+        tl.reverse();
+    })
+      
 
 
 
 
 
- </script>
+</script>
 
 </html>
