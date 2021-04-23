@@ -13,6 +13,7 @@
     <!-- 動畫控制 -->
     <button id="playBtn" class="btn">play</button>
     <button id="pauseBtn" class="btn">pause</button>
+    <button id="reverseBtn" class="btn">reverse</button>
 
 
     <div class="box m1"></div>
@@ -22,7 +23,7 @@
         //start
         var playBtn = document.getElementById('playBtn'); 
         var pauseBtn = document.getElementById('pauseBtn');
-
+        var reverseBtn = document.getElementById('reverseBtn');
         //動畫
         var tl = new TimelineMax({
             //repeat : 1,
@@ -50,6 +51,9 @@
        });
        pauseBtn.addEventListener('click' , function(){
            tl.pause();
+       });
+       reverseBtn.addEventListener('click' , function(){
+           tl.reverse();
        });
 
 
