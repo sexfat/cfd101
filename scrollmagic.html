@@ -28,7 +28,8 @@
             <h1>場景三</h1>
             <div class="m2 box"></div>
         </section>
-        <section class="section02">
+        <div id="kp3"></div>
+        <section class="section03 gray">
             <h1>場景四</h1>
             <div class="m3 box"></div>
         </section>
@@ -73,6 +74,20 @@
             reverse : false, //離開場景不在觸發動畫
             //duration : '50%' //動畫觸發範圍
         }).setTween(tl2).addIndicators().addTo(controller);
+
+
+        //場景四
+        
+
+         //setClassToggle 觸發事件 
+         new ScrollMagic.Scene({
+            triggerElement : '#kp3', // 場景觸發點
+            //triggerHook:0.5 ,//瀏覽器的觸發點
+            //reverse : false, //離開場景不在觸發動畫
+            //duration : '50%' //動畫觸發範圍
+        }).setClassToggle('.section03' , 'on').addIndicators().addTo(controller);
+       
+
 
 
 
