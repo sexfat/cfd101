@@ -40,7 +40,11 @@
             <div class="text2 text">iPhone SE 擁有我們最強大的晶片和最受歡迎的尺寸</div>
             <div class="text3 text">更有讓你心動不已的價格。一切</div>
         </section>
-        <section class="gray"></section>
+        <div id="kp5"></div>
+        <section class="section5 gray">
+            <h1>場景五</h1>
+        </section>
+        <section class=""></section>
     </div>
     <script>
         //start
@@ -123,7 +127,17 @@
 
 
 
-
+         //場景6
+         new ScrollMagic.Scene({
+            triggerElement : '#kp5', // 場景觸發點
+            //triggerHook:0 ,//瀏覽器的觸發點
+            // reverse : false, //離開場景不在觸發動畫
+            //duration : '300%' //動畫觸發範圍
+        }).on('enter' , function(){
+            console.log('場景進入')
+        }).on('leave' , function(){
+            console.log('場景離開')
+        }).addIndicators().addTo(controller);
 
 
 
