@@ -77,7 +77,11 @@
 
 
         //場景四
-        
+
+        var tl3 = TweenMax.to('.m3' , 1 , {
+           scale: 20 
+        })
+
 
          //setClassToggle 觸發事件 
          new ScrollMagic.Scene({
@@ -85,7 +89,7 @@
             //triggerHook:0.5 ,//瀏覽器的觸發點
             //reverse : false, //離開場景不在觸發動畫
             //duration : '50%' //動畫觸發範圍
-        }).setClassToggle('.section03' , 'on').addIndicators().addTo(controller);
+        }).setTween(tl3).setClassToggle('.section03' , 'on').addIndicators().addTo(controller);
        
 
 
