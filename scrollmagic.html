@@ -28,12 +28,16 @@
         //start
         var controller = new ScrollMagic.Controller();
         
+
+        //動畫
         var tl = TweenMax.to('.m1' , 1 , {
             x: 400
         });
-
+        
+        //觸發事件
         new ScrollMagic.Scene({
-            triggerElement : '#kp1'
+            triggerElement : '#kp1',
+            offset : '100px'
         }).setTween(tl).addIndicators().addTo(controller);
 
 
