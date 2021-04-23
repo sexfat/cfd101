@@ -5,6 +5,7 @@ background-color: rgb(33, 33, 33);
    font-size: 14px;
    color: #fb0000;
    font-size: 20px;
+   overflow-x: hidden;
 
 }
 
@@ -23,6 +24,13 @@ background-color: rgb(33, 33, 33);
  }
  .bezier {
     background-color: rgb(251, 21, 21);
+ }
+ section {
+    width: 100vw;
+    height: 100vh;
+ }
+ .gray {
+    background-color: rgb(237, 237, 237);
  } 
 
 /* .t1 {
