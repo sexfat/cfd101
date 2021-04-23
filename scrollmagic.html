@@ -100,6 +100,25 @@
         }).setTween(tl3).setClassToggle('.section03' , 'on').addIndicators().addTo(controller);
        
 
+        //場景五
+
+        var tltext = new TimelineMax();
+
+        tltext.to('.text1' ,1,{
+            x: 100
+        }).to('.text2' ,1,{
+            x: 100
+        }).to('.text3' ,1,{
+            x: 100
+        }) 
+
+          //觸發事件
+          new ScrollMagic.Scene({
+            triggerElement : '#kp4', // 場景觸發點
+            triggerHook:0 ,//瀏覽器的觸發點
+            // reverse : false, //離開場景不在觸發動畫
+            duration : '300%' //動畫觸發範圍
+        }).setPin('.section04').setTween(tltext).addIndicators().addTo(controller);
 
 
 
