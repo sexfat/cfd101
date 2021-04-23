@@ -10,13 +10,23 @@
     <title>timelinemax</title>
 </head>
 <body>
+    <!-- 動畫控制 -->
+    <button id="playBtn" class="btn">play</button>
+    <button id="pauseBtn" class="btn">pause</button>
+
+
     <div class="box m1"></div>
     <div class="box m2"></div>
+
     <script>
         //start
+        var playBtn = document.getElementById('playBtn'); 
+        var pauseBtn = document.getElementById('pauseBtn');
+
+        //動畫
         var tl = new TimelineMax({
-            repeat : 1,
-            yoyo :true //
+            //repeat : 1,
+            //yoyo :true  動畫返回搭配repeat使用
         }); 
 
         tl.to('.m1' , 1 , {
@@ -29,8 +39,16 @@
             ease : Power0.easeNone//不使用補間動畫效果
         }).to('.m2' , 1 , {
             x: 400
-        })
+        });
 
+       //control mv 
+      
+       playBtn.addEventListener('click' , function(){
+           tl.play();
+       });
+       pauseBtn.addEventListener('click' , function(){
+           tl.pause();
+       });
 
 
     </script>
