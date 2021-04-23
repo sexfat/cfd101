@@ -9,11 +9,17 @@
     <title>index</title>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="box m1"></div>
+    <div class="box m2"></div>
+    <h1 class="t1">TweenMax 動畫</h1>
   
 
   <script>
       // start
+      // .m1 物件    6 秒數   x: 500 位移距離
+      TweenMax.to('.m1' , 6 , {x: 500});
+      TweenMax.set('.t1' , {opacity : 0});  // 初始化設置
+      TweenMax.from('.m2' , 2 , {x: 300});
      
 
 
