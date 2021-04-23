@@ -20,6 +20,9 @@ background-color: rgb(33, 33, 33);
   }
  .btn {
     padding: 10px  20px;
+ }
+ .bezier {
+    background-color: rgb(251, 21, 21);
  } 
 
 /* .t1 {

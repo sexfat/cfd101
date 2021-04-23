@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="box bezier">bezier</div>
     <div class="box m1"></div>
     <div class="box m2">m2</div>
     <div class="box m3"></div>
@@ -19,13 +20,14 @@
     <div class="box m4"></div>
     <div class="box m4"></div>
     <h1 class="t1">TweenMax 動畫</h1>
-    <div class="box bezier">bezier</div>
+   
 
 
 
 
     <script>
         // start
+        TweenMax.set('.t1', { opacity: 0 });  // 初始化設置
         // .m1 物件    6 秒數   x: 500 位移距離
         TweenMax.to('.m1', 3, { 
             x: 500,
@@ -39,10 +41,12 @@
             // ease : Elastic.easeOut // 補間動畫效果
         
         });
-        TweenMax.set('.t1', { opacity: 0 });  // 初始化設置
-        TweenMax.to('.m2', 2, { 
-            rotation : 360 ,
-            transformOrigin : 'right bottom'
+       
+        TweenMax.to('.m2', 2, {
+            // width : 300,
+            height: 600 
+            // rotation : 360 ,
+            // transformOrigin : 'right bottom'
 
         });
         TweenMax.fromTo('.m3', 2, {
@@ -55,17 +59,28 @@
       
 
 
-TweenMax.to('.bezier' , 1 ,{
+TweenMax.to('.bezier' , 6 ,{
     bezier : {
         curviness : 1.25,
         values : [{
            x: 100,
            y: 200
         },{
-            x: 300,
-            y: 300
-        }] 
-    }
+            x: 600,
+            y: 400
+        }, {
+            x: 0,
+            y: 0
+        }, {
+            x: 600,
+            y: 600
+        }],
+        autoRotate : false 
+    },
+    //tween 屬性
+    // rotation : 360,
+    scale:1,
+    width: 300
 })
 
 
