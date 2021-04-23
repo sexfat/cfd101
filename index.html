@@ -42,7 +42,11 @@
             transformOrigin : 'right bottom'
 
         });
-        TweenMax.fromTo('.m3', 2, { x: 100, opacity: 1 }, { x: 400, opacity: 0 });
+        TweenMax.fromTo('.m3', 2, {
+             x: 100, opacity: 1 //  起始位址
+            }, {
+             x: 400, opacity: 0 //  結束位址
+            });
 
         TweenMax.staggerTo('.m4', 1, { x: 100, y: 100, rotation: 360 }, 2);
 
