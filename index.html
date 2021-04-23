@@ -19,6 +19,9 @@
     <div class="box m4"></div>
     <div class="box m4"></div>
     <h1 class="t1">TweenMax 動畫</h1>
+    <div class="box bezier">bezier</div>
+
+
 
 
     <script>
@@ -49,6 +52,21 @@
             });
 
         TweenMax.staggerTo('.m4', 1, { x: 100, y: 100, rotation: 360 }, 2);
+      
+
+
+TweenMax.to('.bezier' , 1 ,{
+    bezier : {
+        curviness : 1.25,
+        values : [{
+           x: 100,
+           y: 200
+        },{
+            x: 300,
+            y: 300
+        }] 
+    }
+})
 
 
 
