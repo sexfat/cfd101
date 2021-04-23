@@ -14,7 +14,10 @@
     <div class="box m2"></div>
     <script>
         //start
-        var tl = new TimelineMax(); 
+        var tl = new TimelineMax({
+            repeat : 1
+        }); 
+
         tl.to('.m1' , 1 , {
             x: 300
         }).to('.m1' , 1 , {
