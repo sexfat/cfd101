@@ -12,7 +12,7 @@
 
 <body>
     <div class="box m1"></div>
-    <div class="box m2"></div>
+    <div class="box m2">m2</div>
     <div class="box m3"></div>
     <!-- stagger -->
     <div class="box m4"></div>
@@ -26,17 +26,22 @@
         // .m1 物件    6 秒數   x: 500 位移距離
         TweenMax.to('.m1', 3, { 
             x: 500,
-            scale : 1.5,  //放大
-            repeat : 2,  // 重複動畫
+            scale : 3,  //放大
+            repeat : 0,  // 重複動畫
             repeatDelay : 2, //重複延遲
             rotation: 180, // 旋轉
-            delay : 1,
+            delay : 1,//延遲
+            backgroundColor : '#FFB630',
             ease : Bounce.easeOut,
             // ease : Elastic.easeOut // 補間動畫效果
         
         });
         TweenMax.set('.t1', { opacity: 0 });  // 初始化設置
-        TweenMax.from('.m2', 2, { x: 300 });
+        TweenMax.to('.m2', 2, { 
+            rotation : 360 ,
+            transformOrigin : 'right bottom'
+
+        });
         TweenMax.fromTo('.m3', 2, { x: 100, opacity: 1 }, { x: 400, opacity: 0 });
 
         TweenMax.staggerTo('.m4', 1, { x: 100, y: 100, rotation: 360 }, 2);
