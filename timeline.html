@@ -49,19 +49,25 @@
         tl.stop();
 
        //control mv 
-      
+       
+       //播放動畫
        playBtn.addEventListener('click' , function(){
            tl.play();
        });
+       //暫停
        pauseBtn.addEventListener('click' , function(){
            tl.pause();
        });
+
+       // 反轉動畫
        reverseBtn.addEventListener('click' , function(){
            tl.reverse();
        });
+       // 加快
        timescalefastBtn.addEventListener('click' , function(){
            tl.timeScale(4);
        });
+       // 恢復
        timescaleBtn.addEventListener('click' , function(){
            tl.timeScale(1);
        });
