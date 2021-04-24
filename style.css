@@ -32,6 +32,13 @@ background-color: rgb(128, 128, 128);
  .gray {
     background-color: rgb(237, 237, 237);
  }
+ .deepgray {
+   background-color: rgb(162, 162, 162);
+}
+
+ .lightgray {
+   background-color: rgb(240, 240, 240);
+}
  /* #kp1 {
     position: relative;
     top : 300px
@@ -54,6 +61,16 @@ background-color: rgb(128, 128, 128);
  .text {
     font-size: 30px;
     color:rgb(0, 0, 0)
+ }
+ .flex {
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .right {
+    margin-left: 20px;
  }
 
 /* .t1 {
