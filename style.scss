@@ -116,7 +116,7 @@ $var2 : 20;
     }
 
     h5 {
-        font-size: $fontsize * 1.2;
+        font-size: round($fontsize * 1.2);
     }
 }
 
@@ -137,8 +137,6 @@ $width : 99px;
 }
 
 
-
-
 @mixin fontdevice($device) {
     .font_#{$device} {
         @if $device == desktop {
@@ -157,7 +155,6 @@ $width : 99px;
         }
     }
 }
-
 
 @include fontdevice(small){
    font-weight: 400; 
