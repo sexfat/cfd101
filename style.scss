@@ -1,6 +1,7 @@
 /* ==css 註解 ==*/
 // scss 註解
 @import 'base/var';
+@import 'mixins/mixin';
 
 
 body {
@@ -53,90 +54,10 @@ h2 {
     }
 }
 
-// @mixin
 
-// function name(var){
-//    // call 
-// }
 
-// 函式宣告 @mixin
-@mixin center {
-    /*置中*/
-    margin: 5px auto;
-}
 
-@mixin font-large {
-    font-size: 30px;
-    color: #333;
-}
-
-@mixin font-small {
-    font-size: 16px;
-    color: #333;
-}
-
-//mixin 一個變數
-@mixin fontsize($size) {
-    font-size: $size;
-    color: #333;
-}
-
-//mixin 二個變數
-@mixin rect($w:1200px , $h:100vh , $bgc:#fff) {
-    width : $w;
-    height: $h; 
-    background-color: $bgc; 
-    @include center();
-}
-//   變數： 預設值 / null
-
-//區塊 
-@mixin rectbox($id , $w , $h:$w){
-  #{$id}{
-     width: $w ;
-     height: $h;
-     @content;
-  }
-}
-//
-@include rectbox('#box', 600px){
-    padding: 100px;
-    background-color: #f2ff00;
-}
-//
-@include rectbox('.box_small', 300px , 200px){
-    display: flex;
-    justify-content: center; 
-};
-
-//
-@include rectbox('.box_large', 600px , 400px){
-    @include font-large();  
-};
-
-//btn 組件
-
-@mixin btn($name , $w , $bgc ){
-  .btn-#{$name}{
-     width: $w;
-     padding:10px;
-     text-align: center;
-     vertical-align: middle;
-     color: #fff;
-     background-color: $bgc;
-     cursor: pointer;
-     margin: 10px;
-     border-radius: 5px;
-     transition: .2s all ease-in-out;
-     @content;
-     &:hover{
-       background-color: darken($bgc , 20%);
-       width: $w * 2;
-       padding: 20px;
-     }
-  } 
-}
-
+// 按鈕
 
 @include btn('normal',  100px, #333 );
 
@@ -147,6 +68,22 @@ h2 {
 @include btn('xs',  60px, rgb(221, 255, 0));
 
 
+
+// ===  區塊  ====
+
+@include rectbox('#box', 600px){
+    padding: 100px;
+    background-color: #f2ff00;
+}
+
+@include rectbox('.box_small', 300px , 200px){
+    display: flex;
+    justify-content: center; 
+};
+
+@include rectbox('.box_large', 600px , 400px){
+    @include font-large();  
+};
 
 
 
