@@ -88,19 +88,39 @@ h2 {
     background-color: $bgc; 
     @include center();
 }
-
-
 //   變數： 預設值 / null
+
+//區塊 
+@mixin rectbox($id , $w , $h:$w){
+  #{$id}{
+     width: $w ;
+     height: $h;
+     @content;
+  }
+}
+
+@include rectbox('#box', 600px){
+    padding: 100px;
+    background-color: #f2ff00;
+}
+
+@include rectbox('.box_small', 300px , 200px);
+@include rectbox('.box_large', 600px , 400px);
+
+
+
+
+
+
 
 
 
 
 //呼叫函式 @include name
 .content {
+    padding: 100px;
     @include fontsize(15px);
     @include rect(1200px , null , #d3d3d3);
-   
-
     .box {
         @include fontsize(33px);
     }
