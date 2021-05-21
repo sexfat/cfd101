@@ -1,0 +1,13 @@
+//sass 數值型態
+$fontsize : 18px; // 數值
+$color : rgb(254, 64, 64); // 顏色
+$space : 10px auto 0px; //list
+$bg-color : ('blue' : #007bff,
+    'yellow' : rgb(251, 255, 0),
+    'green' : #3af73a); //map
+
+$null : null; // null
+$path: './img';
+$attr : 'padding';
+// #{變數}  字串的轉換;
+$class : '.middle';
