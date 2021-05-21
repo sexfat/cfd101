@@ -44,10 +44,49 @@ h2 {
             li {
                 width: 100px;
                 height: 30px;
+
                 span {
                     font-size: 10px;
                 }
             }
         }
     }
+}
+
+// @mixin
+
+// function name(var){
+//    // call 
+// }
+
+// 函式宣告 @mixin
+@mixin center {
+    margin: 10px auto;
+    width: 200px;
+}
+
+@mixin font-large {
+    font-size: 30px;
+    color: #333;
+}
+
+@mixin font-small {
+    font-size: 16px;
+    color: #333;
+}
+
+
+//呼叫函式 @include name
+.content {
+    @include font-small();
+    .box {
+        @include center();
+        @include font-large();
+    }
+}
+
+.box_wide {
+    background-color: #f42f2f;
+    @include center();
+    @include font-large();
 }
