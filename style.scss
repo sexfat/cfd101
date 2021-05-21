@@ -98,14 +98,21 @@ h2 {
      @content;
   }
 }
-
+//
 @include rectbox('#box', 600px){
     padding: 100px;
     background-color: #f2ff00;
 }
+//
+@include rectbox('.box_small', 300px , 200px){
+    display: flex;
+    justify-content: center; 
+};
 
-@include rectbox('.box_small', 300px , 200px);
-@include rectbox('.box_large', 600px , 400px);
+//
+@include rectbox('.box_large', 600px , 400px){
+    @include font-large();  
+};
 
 
 
