@@ -127,21 +127,20 @@ h2 {
      cursor: pointer;
      margin: 10px;
      border-radius: 5px;
-     @content;
+     span {
+      @content;
+     }
   } 
 }
 
 
 @include btn('normal',  100px, #333 );
 
-@include btn('large',  130px, #00d9ff ){
-    border : 3px solid #f42f2f;
+@include btn('large',  130px, #00d9ff){
+    font-size: 20px;
 };
 
-@include btn('xs',  60px, rgb(221, 255, 0) ){
-    border : 3px solid #fee002;
-};
-
+@include btn('xs',  60px, rgb(221, 255, 0));
 
 
 
