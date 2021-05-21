@@ -1,0 +1,5 @@
+footer {
+    @include rect(100% , 300px , #0077c6);
+    position: fixed;
+    bottom: 0;
+}

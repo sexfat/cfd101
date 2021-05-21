@@ -1,0 +1,10 @@
+.content {
+    width: 100%;
+    height: 800px;
+ }
+ 
+ .box_wide {
+     background-color: #f42f2f;
+    
+     @include fontsize(50px);
+ }

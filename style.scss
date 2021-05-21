@@ -1,18 +1,31 @@
 /* ==css 註解 ==*/
 // scss 註解
+//變數
 @import 'base/var';
+// function
 @import 'mixins/mixin';
+//layout
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/login';
+@import 'layout/footer';
+
+//page 
+@import 'page/index';
+
+
 
 
 body {
-    $var: 100px;
     margin: 0;
-    #{$attr}: 10px; //屬性
-    width: 1000px;
     font-size: $fontsize;
     color: $color;
     background-color: map-get($bg-color, 'green');
-    background-image: url('#{$path}/a.jpg'); //路徑
+    //background-image: url('#{$path}/a.jpg'); //路徑
+}
+
+.wrapper {
+    @include rect(1200px , auto , #fff);
 }
 
 h1 {
@@ -36,23 +49,6 @@ h2 {
 //     width: 100px;
 // }
 //scss
-.wrapper {
-    nav {
-        .nav_main {
-            list-style: none;
-            padding: 0;
-
-            li {
-                width: 100px;
-                height: 30px;
-
-                span {
-                    font-size: 10px;
-                }
-            }
-        }
-    }
-}
 
 
 
@@ -86,34 +82,4 @@ h2 {
 };
 
 
-
-
-
-
-
-
-
-
-
-
 //呼叫函式 @include name
-.content {
-    padding: 100px;
-    @include fontsize(15px);
-    @include rect(1200px , null , #d3d3d3);
-    .box {
-        @include fontsize(33px);
-    }
-}
-
-.box_wide {
-    background-color: #f42f2f;
-   
-    @include fontsize(50px);
-}
-
-body {
-    font-weight: 400;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    @include fontsize(16px);
-}
