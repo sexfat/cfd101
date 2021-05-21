@@ -1,6 +1,44 @@
+/* ==css 註解 ==*/
+// scss 註解
+//sass 數值型態
+$fontsize : 16px; // 數值
+$color : rgb(254, 64, 64); // 顏色
+$space : 10px auto 0px; //list
+$bg-color : (
+   'blue' : #007bff,
+   'yellow' : rgb(251, 255, 0),
+   'green' : #3af73a
+); //map
+
+$null : null; // null
+$path: './images';
+$attr : 'padding';
+// #{變數}  字串的轉換;
+$class : '.middle';
+
+
 body {
+   $var : 100px; 
    margin: 0;
-   padding: 0; 
-   width: 100px;
-   font-size: 10px;
+   #{$attr}: 10px;  //屬性
+   width: 1000px;
+   font-size: $fontsize;
+   color: $color;
+   background-color: map-get($bg-color ,'green');
+   background-image: url('#{$path}/a.jpg'); //路徑
 }
+
+h1 {
+   font-size: $fontsize * 5; 
+   margin: $space;
+}
+h2 {
+    font-size: $fontsize * 4;
+}
+
+#{$class} {
+     margin: 0 auto;
+}// class
+
+
+
