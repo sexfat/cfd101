@@ -4,11 +4,9 @@
 $fontsize : 16px; // 數值
 $color : rgb(254, 64, 64); // 顏色
 $space : 10px auto 0px; //list
-$bg-color : (
-   'blue' : #007bff,
-   'yellow' : rgb(251, 255, 0),
-   'green' : #3af73a
-); //map
+$bg-color : ('blue' : #007bff,
+    'yellow' : rgb(251, 255, 0),
+    'green' : #3af73a); //map
 
 $null : null; // null
 $path: './images';
@@ -18,27 +16,50 @@ $class : '.middle';
 
 
 body {
-   $var : 100px; 
-   margin: 0;
-   #{$attr}: 10px;  //屬性
-   width: 1000px;
-   font-size: $fontsize;
-   color: $color;
-   background-color: map-get($bg-color ,'green');
-   background-image: url('#{$path}/a.jpg'); //路徑
+    $var: 100px;
+    margin: 0;
+    #{$attr}: 10px; //屬性
+    width: 1000px;
+    font-size: $fontsize;
+    color: $color;
+    background-color: map-get($bg-color, 'green');
+    background-image: url('#{$path}/a.jpg'); //路徑
 }
 
 h1 {
-   font-size: $fontsize * 5; 
-   margin: $space;
+    font-size: $fontsize * 5;
+    margin: $space;
 }
+
 h2 {
     font-size: $fontsize * 4;
 }
 
 #{$class} {
-     margin: 0 auto;
-}// class
+    margin: 10px auto;
+}
+
+// class
 
 
+//css 寫法
+// nav ul li {
+//     width: 100px;
+// }
+//scss
+.wrapper {
+    nav {
+        .nav_main {
+            list-style: none;
+            padding: 0;
 
+            li {
+                width: 100px;
+                height: 30px;
+                span {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
