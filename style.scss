@@ -127,8 +127,12 @@ h2 {
      cursor: pointer;
      margin: 10px;
      border-radius: 5px;
-     span {
-      @content;
+     transition: .2s all ease-in-out;
+     @content;
+     &:hover{
+       background-color: darken($bgc , 20%);
+       width: $w * 2;
+       padding: 20px;
      }
   } 
 }
@@ -137,7 +141,7 @@ h2 {
 @include btn('normal',  100px, #333 );
 
 @include btn('large',  130px, #00d9ff){
-    font-size: 20px;
+      border: 1px solid #333;  
 };
 
 @include btn('xs',  60px, rgb(221, 255, 0));
