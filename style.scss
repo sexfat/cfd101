@@ -2,8 +2,12 @@
 // scss 註解
 //變數
 @import 'base/var';
+
+
 // function
 @import 'mixins/mixin';
+@import 'base/body';
+
 //layout
 @import 'layout/header';
 @import 'layout/nav';
@@ -12,43 +16,6 @@
 
 //page 
 @import 'page/index';
-
-
-
-
-body {
-    margin: 0;
-    font-size: $fontsize;
-    color: $color;
-    background-color: map-get($bg-color, 'green');
-    //background-image: url('#{$path}/a.jpg'); //路徑
-}
-
-.wrapper {
-    @include rect(1200px , auto , #fff);
-}
-
-h1 {
-    font-size: $fontsize * 5;
-    margin: $space;
-}
-
-h2 {
-    font-size: $fontsize * 4;
-}
-
-#{$class} {
-    margin: 10px auto;
-}
-
-// class
-
-
-//css 寫法
-// nav ul li {
-//     width: 100px;
-// }
-//scss
 
 
 
