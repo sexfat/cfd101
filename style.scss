@@ -61,8 +61,8 @@ h2 {
 
 // 函式宣告 @mixin
 @mixin center {
-    margin: 10px auto;
-    width: 200px;
+    /*置中*/
+    margin: 5px auto;
 }
 
 @mixin font-large {
@@ -75,18 +75,45 @@ h2 {
     color: #333;
 }
 
+//mixin 一個變數
+@mixin fontsize($size) {
+    font-size: $size;
+    color: #333;
+}
+
+//mixin 二個變數
+@mixin rect($w:1200px , $h:100vh , $bgc:#fff) {
+    width : $w;
+    height: $h; 
+    background-color: $bgc; 
+    @include center();
+}
+
+
+//   變數： 預設值 / null
+
+
+
 
 //呼叫函式 @include name
 .content {
-    @include font-small();
+    @include fontsize(15px);
+    @include rect(1200px , null , #d3d3d3);
+   
+
     .box {
-        @include center();
-        @include font-large();
+        @include fontsize(33px);
     }
 }
 
 .box_wide {
     background-color: #f42f2f;
-    @include center();
-    @include font-large();
+   
+    @include fontsize(50px);
+}
+
+body {
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    @include fontsize(16px);
 }
