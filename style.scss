@@ -253,6 +253,28 @@ $titlesize: (
     } 
 }
 
+$btn_module: (
+   'primary' : #025fff,
+   'info' : green,
+   'warning' : yellow,
+   'error' : #f20,
+   'gray' : #e1e1e1  
+);
+
+
+@each $class , $val in $btn_module {
+    //  .#{$class}-btn {
+    //      width: 120px;
+    //      padding: 10px;
+    //      text-align: center;
+    //      background-color: $val;
+    //      color: invert($val);
+    //  }
+    @include btn($class , 120px ,$val);
+}
+
+
+
 
 
 
