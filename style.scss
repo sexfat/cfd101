@@ -254,13 +254,13 @@ $titlesize: (
 }
 
 $btn_module: (
-   'primary' : #025fff,
+   'primary' : #924bc8,
    'info' : green,
    'warning' : yellow,
    'error' : #f20,
    'secondary' : #e1e1e1,
    'light'   : gray,
-   'dark'    : #333
+   'dark'    : #46285D
    );
 
 
@@ -274,6 +274,11 @@ $btn_module: (
     //  }
     @include btn($class , 120px ,$val);
 }
+.text {
+    color: map-get($btn_module , 'primary')
+}
+
+
 
 
 
