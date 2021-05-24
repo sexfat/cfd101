@@ -68,8 +68,8 @@
 //呼叫函式 @include name
 
 // 顏色函式
-＿＿
-// lighten($color, $amount) 
+＿＿ // lighten($color, $amount) 
+
 // darken($color, $amount)
 .box-light {
     width: 400px;
@@ -139,12 +139,12 @@ $width : 99px;
 
 @mixin fontdevice($device) {
     .font_#{$device} {
-        @if $device == desktop {
+        @if $device==desktop {
             font-size: 30px;
             @content;
         }
 
-        @else if $device == ipad {
+        @else if $device==ipad {
             font-size: 35px;
             @content;
         }
@@ -156,13 +156,60 @@ $width : 99px;
     }
 }
 
-@include fontdevice(ipad){
-   font-weight: 200; 
-};
+@include fontdevice(ipad) {
+    font-weight: 200;
+}
 
+;
 
+// for 迴圈
 @for $i from 1 through 10 {
     .box-#{$i} {
         width: 1px * $i;
     }
 }
+
+@mixin push-left($dir, $num) {
+    @for $i from 1 through $num {
+        .push-#{$dir}-#{$i} {
+            position: relative;
+            #{$dir}: 1px * $i;
+            @content;
+        }
+    }
+}
+
+
+// @include push-left(left ,100);
+// @include push-left(top ,100);
+
+
+// grid
+
+// .col-1 {
+//     width: (1/12) * 100%;
+// }
+
+// .col-2 {
+//     width: (2/12) * 100%;
+// }
+
+// .col-3 {
+//     width: (3/12) * 100%;
+// }
+
+
+@mixin grid($num) {
+    @for $i from 1 through $num {
+        .col-#{$i} {
+            //width: ($i/12) * 100%;
+            flex : 0 0 ($i/$num) * 100%;
+            max-width: ($i/$num) * 100%;
+            @content;
+        }
+    }
+}
+
+@include grid(10){
+    background-color: rgb(232, 232, 232);
+};
