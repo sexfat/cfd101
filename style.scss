@@ -169,15 +169,7 @@ $width : 99px;
     }
 }
 
-@mixin push-left($dir, $num) {
-    @for $i from 1 through $num {
-        .push-#{$dir}-#{$i} {
-            position: relative;
-            #{$dir}: 1px * $i;
-            @content;
-        }
-    }
-}
+
 
 
 // @include push-left(left ,100);
@@ -199,16 +191,7 @@ $width : 99px;
 // }
 
 
-@mixin grid($num) {
-    @for $i from 1 through $num {
-        .col-#{$i} {
-            //width: ($i/12) * 100%;
-            flex: 0 0 ($i/$num) * 100%;
-            max-width: ($i/$num) * 100%;
-            @content;
-        }
-    }
-}
+
 
 @include grid(12) {
     background-color: rgb(244, 18, 18);
@@ -220,18 +203,19 @@ $width : 99px;
 
 // $images : a1 a2 a3 a4 b1 b2 b3;
 
-@mixin img($images ,$format:jpg) {
-    @each $img in $images {
-        .#{$img}-img {
-            background-image: url('images/#{$img}.#{$format}');
-            background-repeat: no-repeat;
-            @content;
-        }
-    }
-}
 
-@include img(a1 a2 a3 , gif);
-@include img(b1 b2 b3 , png);
+
+.slider {
+   @include img(a1 a2 a3 , png){
+       background-size: cover;
+       width:  100%;
+   };
+}  
+
+@include img(b1 b2 b3 , jpg);
 @include img(c1 c2 c3){
     background-size: cover;
+    width: 100vw;
 };
+
+@include img(s1 s2 , png);
