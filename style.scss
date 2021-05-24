@@ -258,8 +258,10 @@ $btn_module: (
    'info' : green,
    'warning' : yellow,
    'error' : #f20,
-   'gray' : #e1e1e1  
-);
+   'secondary' : #e1e1e1,
+   'light'   : gray,
+   'dark'    : #333
+   );
 
 
 @each $class , $val in $btn_module {
