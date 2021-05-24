@@ -156,6 +156,13 @@ $width : 99px;
     }
 }
 
-@include fontdevice(small){
-   font-weight: 400; 
+@include fontdevice(ipad){
+   font-weight: 200; 
 };
+
+
+@for $i from 1 through 10 {
+    .box-#{$i} {
+        width: 1px * $i;
+    }
+}
