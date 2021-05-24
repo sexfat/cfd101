@@ -203,13 +203,35 @@ $width : 99px;
     @for $i from 1 through $num {
         .col-#{$i} {
             //width: ($i/12) * 100%;
-            flex : 0 0 ($i/$num) * 100%;
+            flex: 0 0 ($i/$num) * 100%;
             max-width: ($i/$num) * 100%;
             @content;
         }
     }
 }
 
-@include grid(12){
+@include grid(12) {
     background-color: rgb(244, 18, 18);
+}
+
+;
+
+// @each
+
+// $images : a1 a2 a3 a4 b1 b2 b3;
+
+@mixin img($images ,$format:jpg) {
+    @each $img in $images {
+        .#{$img}-img {
+            background-image: url('images/#{$img}.#{$format}');
+            background-repeat: no-repeat;
+            @content;
+        }
+    }
+}
+
+@include img(a1 a2 a3 , gif);
+@include img(b1 b2 b3 , png);
+@include img(c1 c2 c3){
+    background-size: cover;
 };
