@@ -2,9 +2,11 @@
 $fontsize : 15px; // 數值
 $color : #383838; // 顏色
 $space : 10px auto 0px; //list
-$bg-color : ('blue' : #007bff,
+$bg-color : (
+    'blue' : #007bff,
     'yellow' : rgb(251, 255, 0),
-    'green' : #3af73a); //map
+    'green' : #3af73a
+    ); //map
 
 $null : null; // null
 $path: './img';
