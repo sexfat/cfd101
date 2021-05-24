@@ -219,3 +219,15 @@ $width : 99px;
 };
 
 @include img(s1 s2 , png);
+
+
+
+
+
+.box {
+    @include prefix(transition , all 4s ease);
+}
+
+.page {
+    @include prefix-val(display, flex);
+}

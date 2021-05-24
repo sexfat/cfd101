@@ -107,3 +107,22 @@
       }
   }
 }
+
+// css prefixes
+// -webkit-transition: all 4s ease;
+// -moz-transition: all 4s ease;
+// -ms-transition: all 4s ease;
+// -o-transition: all 4s ease;
+// transition: all 4s ease; 
+
+@mixin prefix($p , $val){
+  @each $prefix in '' , -webkit- , -moz- , -ms- , -o- {
+    #{$prefix}#{$p} : $val   
+    }
+}
+
+@mixin prefix-val($p , $val){
+    @each $prefix in '' , -webkit- , -moz- , -ms- , -o- {  
+      #{$p} : $prefix+$val   
+      }
+  }
