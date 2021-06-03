@@ -41,7 +41,7 @@ exports.sync = parallel(missA , missB);
 var concat = require('gulp-concat');
 
 function concatcss(){
-    return src('css/*.css')
+    return src(['css/**/*.css' , 'css/*.css' ,'!css/aboutus/*.css' ])
     .pipe(concat('style.css'))
     .pipe(dest('css/allcss/'))
 }
