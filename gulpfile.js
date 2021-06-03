@@ -36,6 +36,8 @@ exports.async = series(missA , missB);
 exports.sync = parallel(missA , missB);
 
 
+
+//======= 合併檔案  ===============
 //  src(來源檔案).pipe().pipe(dest(目的地))
 
 var concat = require('gulp-concat');
@@ -57,6 +59,17 @@ exports.allcss = concatcss;
 exports.alljs = concatjs;
 
  
+//======= 壓縮css  ===============
+const cleanCSS = require('gulp-clean-css');
+
+function cleancss(){
+  return src('css/allcss/*.css')
+  .pipe(cleanCSS({compatibility: 'ie10'}))
+  .pipe(dest('minicss')) 
+}
+
+exports.minicss = cleancss;
+
 
 
 
