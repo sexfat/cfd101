@@ -70,6 +70,17 @@ function cleancss(){
 
 exports.minicss = cleancss;
 
+//======= 壓縮js  ===============
+const uglify = require('gulp-uglify');
+
+function ugjs(){
+    return src('js/b.js')
+    .pipe(uglify())
+    .pipe(dest('minijs'))
+}
+
+exports.minijs = ugjs;
+
 
 
 

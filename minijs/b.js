@@ -1,0 +1,1 @@
+var b=10;let age=26,drink=21<=age?"Beer":"Juice";console.log(drink);let drink;drink=21<=age?"Beer":"Juice",console.log(drink);
