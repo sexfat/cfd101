@@ -100,7 +100,7 @@
 @mixin img($images, $format: jpg) {
   @each $img in $images {
     .#{$img}-img {
-      background-image: url('images/#{$img}.#{$format}');
+      background-image: url('#{$path}/#{$img}.#{$format}');
       background-repeat: no-repeat;
       border-bottom: 1px solid #333;
       @content;

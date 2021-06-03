@@ -361,6 +361,10 @@ h1.title {
 //   @include title
 }
 
+.bb {
+    background-image: url('#{$path}/a1.jpg');
+}
+
 
 
 
@@ -394,6 +398,17 @@ h1.title {
 // .box-large {
 //     @extend %black;  
 // }
+
+
+@include img(car , png){
+    width: 100%;
+    height: auto;
+};
+
+
+@include img(bus , gif )
+
+
 
 
 
