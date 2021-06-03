@@ -344,6 +344,28 @@ $btn_module: ('primary' : #924bc8,
     height: 100px;
 }
 
+.title-spec {
+   font-size: 30px;
+   font-weight: 300;
+}
+
+@mixin title() {
+    font-size: 30px;
+    font-weight: 300; 
+}
+
+
+
+h1.title {
+   @extend .title-spec; 
+//   @include title
+}
+
+
+
+
+
+
 
 
 
