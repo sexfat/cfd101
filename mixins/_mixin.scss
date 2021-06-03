@@ -166,17 +166,6 @@
 
 
 // responsive  
-
-$breakpoint : (
-  large-desktop: 1920px,
-  desktop : 1200px,
-  tablet : 996px,
-  mobile: 720px,
-  xs-mobile: 360px   
-); // map
-
-
-
 @mixin respond_each($res) {
   @each $viewpoint, $num in $breakpoint {
     @if $res == $viewpoint {

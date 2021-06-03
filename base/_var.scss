@@ -41,4 +41,13 @@ $desktop : 1200px;
 $tablet : 768px;
 $mobile: 596px;
 
+// 斷點 2
+$breakpoint : (
+  large-desktop: 1920px,
+  desktop : 1200px,
+  tablet : 996px,
+  mobile: 720px,
+  xs-mobile: 360px   
+); // map
+
 
