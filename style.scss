@@ -266,8 +266,7 @@ $btn_module: ('primary' : #924bc8,
     'dark' : #46285D);
 
 
-@each $class,
-$val in $btn_module {
+@each $class, $val in $btn_module {
     //  .#{$class}-btn {
     //      width: 120px;
     //      padding: 10px;
@@ -287,6 +286,21 @@ $val in $btn_module {
 
 
 //respondsive module
+
+
+@include respond_each(large-desktop){
+    h2 {
+      font-size: 36px;
+    }
+}
+
+
+@include respond_each(xs-mobile){
+    h2 {
+      font-size: 36px;
+    }
+}
+
 
 
 
