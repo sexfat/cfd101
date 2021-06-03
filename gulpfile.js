@@ -82,6 +82,23 @@ function ugjs(){
 exports.minijs = ugjs;
 
 
+//====== 合併css -> 壓縮css
+
+function concat_css(){
+    return src('css/**/*.css')
+    .pipe(concat('style.css'))
+    .pipe(dest('minicss'))
+}
+
+function mini_css(){
+    return src('minicss/style.css')
+    .pipe(cleanCSS({compatibility: 'ie10'}))
+    .pipe(dest('minicss/mini/'))
+}
+
+exports.all = series(concat_css , mini_css);
+
+
 
 
 
