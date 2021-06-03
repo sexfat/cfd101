@@ -8,3 +8,29 @@
     
      @include fontsize(50px);
  }
+
+
+
+// 桌機
+ @include rwd(desktop){
+   .wrapper {
+       width: 100%;
+       min-width: 1200px;
+   }
+}
+
+// 平板
+@include rwd(tablet){
+    .wrapper {
+        width: 100%;
+        min-width: 1200px;
+    }
+}
+
+// 手機
+@include rwd(mobile){
+    .wrapper {
+        width: 100%;
+        min-width: 1200px;
+    }
+}
