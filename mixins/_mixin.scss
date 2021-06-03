@@ -126,3 +126,27 @@
       #{$p} : $prefix+$val   
       }
   }
+
+// respond module
+  @mixin rwd($breakpoint) {
+    @if $breakpoint == desktop {
+        /*桌機*/
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == tablet {
+        /*平板*/
+        @media screen and (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == mobile {
+        /*手機*/
+        @media screen and (max-width: $mobile) {
+            @content;
+        }
+    }
+}

@@ -22,7 +22,7 @@
 
 //page 
 @import 'page/index';
-@import 'page/aboutus';
+@import 'page/about/aboutus';
 
 
 
@@ -282,55 +282,12 @@ $val in $btn_module {
     color: map-get($btn_module, 'primary')
 }
 
-$desktop : 1200px;
-$tablet : 768px;
-$mobile: 596px;
+
 
 
 
 //respondsive module
 
-@mixin rwd($breakpoint) {
-    @if $breakpoint==desktop {
-        /*桌機*/
-        @media screen and (min-width: $desktop) {
-            @content;
-        }
-    }
 
-    @else if $breakpoint==tablet {
-        /*平板*/
-        @media screen and (min-width: $tablet) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint==mobile {
-        /*手機*/
-        @media screen and (max-width: $mobile) {
-            @content;
-        }
-    }
-}
-
-
-@include rwd(desktop){
-    h1 {
-        font-size: 20px;
-    }
-}
-
-@include rwd(mobile){
-    h1 {
-        font-size: 30px;
-    }
-}
-
-
-@include rwd(tablet){
-    .wrapper {
-       width:80% ; 
-    }
-}
 
 
