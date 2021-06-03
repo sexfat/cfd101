@@ -81,34 +81,39 @@ function ugjs(){
 
 exports.minijs = ugjs;
 
+// === rename 更改檔案名稱 ===
+ const rename = require('gulp-rename');
 
 //====== 合併 + 壓縮css
 
+function concat_css(){
+    return src('css/**/*.css')
+    .pipe(concat('style.css'))// 合併
+    .pipe(cleanCSS({compatibility: 'ie10'})) // 壓縮
+    .pipe(rename({
+             extname: '.min.css'
+        })) // 改副檔名
+    .pipe(dest('minicss'))
+}
+exports.all = series(concat_css);
+
+
+
+// // 合併 -> 壓縮
 // function concat_css(){
 //     return src('css/**/*.css')
 //     .pipe(concat('style.css'))
-//     .pipe(cleanCSS({compatibility: 'ie10'}))
 //     .pipe(dest('minicss'))
 // }
-// exports.all = series(concat_css);
 
 
+// function mini_css(){
+//     return src('minicss/style.css')
+//     .pipe(cleanCSS({compatibility: 'ie10'}))
+//     .pipe(dest('minicss/mini/'))
+// }
 
-// 合併 -> 壓縮
-function concat_css(){
-    return src('css/**/*.css')
-    .pipe(concat('style.css'))
-    .pipe(dest('minicss'))
-}
-
-
-function mini_css(){
-    return src('minicss/style.css')
-    .pipe(cleanCSS({compatibility: 'ie10'}))
-    .pipe(dest('minicss/mini/'))
-}
-
-exports.all = series(concat_css , mini_css);
+// exports.all = series(concat_css , mini_css);
 
 
 
