@@ -206,26 +206,31 @@ $width : 99px;
 
 
 .slider {
-   @include img(a1 a2 a3 , png){
-       background-size: cover;
-       width:  100%;
-   };
-}  
+    @include img(a1 a2 a3, png) {
+        background-size: cover;
+        width: 100%;
+    }
 
-@include img(b1 b2 b3 , jpg);
-@include img(c1 c2 c3){
+    ;
+}
+
+@include img(b1 b2 b3, jpg);
+
+@include img(c1 c2 c3) {
     background-size: cover;
     width: 100vw;
-};
+}
 
-@include img(s1 s2 , png);
+;
+
+@include img(s1 s2, png);
 
 
 
 
 
 .box {
-    @include prefix(transition , all 4s ease);
+    @include prefix(transition, all 4s ease);
 }
 
 .page {
@@ -238,33 +243,31 @@ $width : 99px;
 
 
 
-$titlesize: (
-  'h1' : 50px,
-  'h2' : 40px,
-  'h3' : 30px,
-  'h4' : 20px,
-  'h5' : 10px
-); //map 
+$titlesize: ('h1' : 50px,
+    'h2' : 40px,
+    'h3' : 30px,
+    'h4' : 20px,
+    'h5' : 10px); //map 
 
 
-@each $title , $val in $titlesize {
-    #{$title}{
+@each $title,
+$val in $titlesize {
+    #{$title} {
         font-size: $val;
-    } 
+    }
 }
 
-$btn_module: (
-   'primary' : #924bc8,
-   'info' : green,
-   'warning' : yellow,
-   'error' : #f20,
-   'secondary' : #e1e1e1,
-   'light'   : gray,
-   'dark'    : #46285D
-   );
+$btn_module: ('primary' : #924bc8,
+    'info' : green,
+    'warning' : yellow,
+    'error' : #f20,
+    'secondary' : #bdb8b8,
+    'light' : gray,
+    'dark' : #46285D);
 
 
-@each $class , $val in $btn_module {
+@each $class,
+$val in $btn_module {
     //  .#{$class}-btn {
     //      width: 120px;
     //      padding: 10px;
@@ -272,19 +275,62 @@ $btn_module: (
     //      background-color: $val;
     //      color: invert($val);
     //  }
-    @include btn($class , 120px ,$val);
+    @include btn($class, 120px, $val);
 }
+
 .text {
-    color: map-get($btn_module , 'primary')
+    color: map-get($btn_module, 'primary')
+}
+
+$desktop : 1200px;
+$tablet : 768px;
+$mobile: 596px;
+
+
+
+//respondsive module
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint==desktop {
+        /*桌機*/
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==tablet {
+        /*平板*/
+        @media screen and (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==mobile {
+        /*手機*/
+        @media screen and (max-width: $mobile) {
+            @content;
+        }
+    }
 }
 
 
+@include rwd(desktop){
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@include rwd(mobile){
+    h1 {
+        font-size: 30px;
+    }
+}
 
 
-
-
-
-
-
+@include rwd(tablet){
+    .wrapper {
+       width:80% ; 
+    }
+}
 
 
