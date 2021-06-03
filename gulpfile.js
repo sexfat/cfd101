@@ -84,7 +84,7 @@ exports.minijs = ugjs;
 // === rename 更改檔案名稱 ===
  const rename = require('gulp-rename');
 
-//====== 合併 + 壓縮css
+//====== 合併 + 壓縮css + 更改檔名
 
 function concat_css(){
     return src('css/**/*.css')
@@ -93,10 +93,17 @@ function concat_css(){
     .pipe(rename({
              extname: '.min.css'
         })) // 改副檔名
-    .pipe(dest('minicss'))
+    .pipe(dest('css/'))
 }
-exports.all = series(concat_css);
+// exports.all = series(concat_css);
 
+// 監看任務 執行打包
+function watchfile(){
+    watch('css/**/*.css' ,concat_css)
+    // watch('js/**/*.js' ,任務)
+}
+
+exports.w = watchfile;
 
 
 // // 合併 -> 壓縮
