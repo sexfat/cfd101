@@ -31,4 +31,7 @@ body .wrapper .item {
   -ms-user-select: none;
   user-select: none;
   background: linear-gradient(to bottom, white, black);
+  animation: 3s ease-in 1s infinite reverse both running slidein;
+  -webkit-animation-delay: 250ms;
+  animation-delay: 250ms;
 }

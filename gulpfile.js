@@ -142,7 +142,7 @@ function sass_style(){
     .pipe(dest('dist/css'))
 }
 
-// 解決跨瀏覽器的問題 
+// 解決跨瀏覽器的問題  [打包用]
 
 function prefixer(){
     return src('dist/css/*.css')
