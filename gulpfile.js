@@ -122,14 +122,18 @@ function concat_css(){
 
 // exports.all = series(concat_css , mini_css);
 
-// sass 編譯
+// css sass 編譯
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');// 回朔到原本開發的檔案
+const autoprefixer = require('gulp-autoprefixer');
 
+
+// 沒有壓縮的  expanded 
 function sass_style(){
     return src('dev/sass/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'})
+    .on('error', sass.logError))
     .pipe(sourcemaps.write())
     //.pipe(cleanCSS({compatibility: 'ie10'}))
 //     .pipe(rename({
@@ -138,7 +142,17 @@ function sass_style(){
     .pipe(dest('dist/css'))
 }
 
+// 解決跨瀏覽器的問題 
 
+function prefixer(){
+    return src('dist/css/*.css')
+    .pipe(autoprefixer({
+        cascade: false
+    }))
+    .pipe(dest('dist/css/prefix'))
+}
+
+exports.prefix = prefixer;
 
 
 
