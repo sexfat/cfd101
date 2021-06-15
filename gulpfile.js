@@ -171,7 +171,9 @@ const imagemin = require('gulp-imagemin');
 
 function min_images(){
     return src('dev/images/*.*')
-    .pipe(imagemin())
+    .pipe(imagemin([
+        imagemin.mozjpeg({quality: 70, progressive: true})
+    ]))
     .pipe(dest('dist/images'))
 }
 
