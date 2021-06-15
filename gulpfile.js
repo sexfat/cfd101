@@ -155,7 +155,7 @@ function html(){
 }
 
 
-// 監看 sass 變動
+// 監看 sass html 變動
 function watch_all(){
     watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
     watch(['dev/*.html' , 'dev/**/*.html'] , html)
@@ -163,7 +163,27 @@ function watch_all(){
     // watch('js/**/*.js' ,任務)
 } 
 
-exports.default = watch_all;
+// exports.default = watch_all;
+
+
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
+
+function browser(done){
+   browserSync.init({
+     server: {
+         baseDir : "./",
+         index: 'index.html'
+     },
+     port : 3000  
+   });
+   watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style).on('change' , reload)
+   watch(['dev/*.html' , 'dev/**/*.html'] , html).on('change' , reload)
+   done();
+}
+
+exports.default = browser;
+
 
 
 
