@@ -149,6 +149,21 @@ exports.styles = watchsass;
 
 
 
+// gulp-file-include 合併 html
+const fileinclude = require('gulp-file-include');
+
+function html(){
+    return src(['dev/*.html' , 'dev/**/*.html'])
+    .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(dest('./'))
+}
+
+exports.template = html;
+
+
 
 
 
