@@ -128,7 +128,7 @@ const sourcemaps = require('gulp-sourcemaps');// 回朔到原本開發的檔案
 const autoprefixer = require('gulp-autoprefixer');
 
 
-// 沒有壓縮的  expanded 
+// 沒有壓縮的  expanded   / compressed 
 function sass_style(){
     return src('dev/sass/*.scss')
     .pipe(sourcemaps.init())
