@@ -169,6 +169,22 @@ function html(){
 }
 
 
+// ======== babel es6 -> es5  ================
+const babel = require('gulp-babel');
+
+  function babel5(){
+      return src('dev/js/c.js')
+      .pipe(babel({
+        presets: ['@babel/env']
+       }))
+      .pipe(dest('dist/js'))
+  }
+
+  exports.jsbabel = babel5;
+
+
+
+
 // 監看 sass html 變動
 // function watch_all(){
 //     watch(['dev/sass/**/*.css' , 'dev/sass/*.scss'] , sass_style)
