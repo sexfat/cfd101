@@ -165,7 +165,20 @@ function html(){
 
 // exports.default = watch_all;
 
+// ================ 壓縮圖片============
 
+const imagemin = require('gulp-imagemin');
+
+function min_images(){
+    return src('dev/images/*.*')
+    .pipe(imagemin())
+    .pipe(dest('dist/images'))
+}
+
+exports.minify_img = min_images;
+
+
+// ================ 瀏覽器 ============
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 
