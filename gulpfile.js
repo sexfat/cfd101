@@ -128,10 +128,21 @@ const sass = require('gulp-sass');
 function sass_style(){
     return src('sass/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS({compatibility: 'ie10'}))
+//     .pipe(rename({
+//         extname: '.min.css'
+//    })) // 改副檔名
     .pipe(dest('css'))
 }
 
-exports.styles = sass_style;
+// 監看 sass 變動
+function watchsass(){
+    watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
+    //console.log('執行成功')
+    // watch('js/**/*.js' ,任務)
+}
+
+exports.styles = watchsass;
 
 
 

@@ -1,5 +1,1 @@
-body {
-  margin: 0; }
-  body .wrapper {
-    width: 1200px;
-    display: flex; }
+body{margin:0}body .wrapper{width:100%;display:flex}body .wrapper .item{justify-self:start}
