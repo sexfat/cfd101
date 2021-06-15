@@ -180,6 +180,20 @@ function min_images(){
 exports.minify_img = min_images;
 
 
+// ================ 清除舊檔案 ============
+ 
+const clean = require('gulp-clean');
+
+function cleanfile(){
+    return src(['dist/*.*' , 'dist/**/*.*'], { read : false })
+    .pipe(clean({force : true }))
+}
+
+
+
+
+
+
 // ================ 瀏覽器 ============
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
@@ -197,7 +211,7 @@ function browser(done){
    done();
 }
 
-exports.default = browser;
+exports.default = series(cleanfile ,browser);
 
 
 
