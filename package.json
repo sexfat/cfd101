@@ -6,10 +6,7 @@
   "scripts": {
     "1.安裝套件": "npm install",
     "2.開發自動化": "gulp",
-    "3.打包上線用" : "gulp package"
-
-  
-
+    "3.打包上線用": "gulp package"
   },
   "repository": {
     "type": "git",
