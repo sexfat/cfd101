@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "1.安裝套件": "npm install",
-    "2.執行自動化": "gulp",
-    "3.壓縮js": "gulp minijs",
-    "4.壓縮圖片": "gulp minify_img"
+    "2.開發自動化": "gulp",
+    "3.打包上線用" : "gulp package"
+
+  
+
   },
   "repository": {
     "type": "git",

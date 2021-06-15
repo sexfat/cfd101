@@ -1,0 +1,1 @@
+"use strict";var man=function(n){return n+"去上課ss"};
