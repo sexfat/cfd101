@@ -98,12 +98,12 @@ function concat_css(){
 // exports.all = series(concat_css);
 
 // 監看任務 執行打包
-function watchfile(){
-    watch('css/**/*.css' ,concat_css)
-    // watch('js/**/*.js' ,任務)
-}
+// function watchfile(){
+//     watch('css/**/*.css' ,concat_css)
+//     // watch('js/**/*.js' ,任務)
+// }
 
-exports.w = watchfile;
+// exports.w = watchfile;
 
 
 // // 合併 -> 壓縮
@@ -138,14 +138,7 @@ function sass_style(){
     .pipe(dest('css'))
 }
 
-// 監看 sass 變動
-function watchsass(){
-    watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
-    //console.log('執行成功')
-    // watch('js/**/*.js' ,任務)
-} 
 
-exports.styles = watchsass;
 
 
 
@@ -161,7 +154,17 @@ function html(){
     .pipe(dest('./'))
 }
 
-exports.template = html;
+
+// 監看 sass 變動
+function watch_all(){
+    watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
+    watch(['dev/*.html' , 'dev/**/*.html'] , html)
+    //console.log('執行成功')
+    // watch('js/**/*.js' ,任務)
+} 
+
+exports.default = watch_all;
+
 
 
 

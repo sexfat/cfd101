@@ -3,7 +3,8 @@
 body {
   margin: 0;
   .wrapper{
-      width: 1200px;
+      width: 100%;
+      min-width: 1200px;
       display: flex;
       .item{
           justify-self: start;
