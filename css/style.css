@@ -1,0 +1,5 @@
+body {
+  margin: 0; }
+  body .wrapper {
+    width: 1200px;
+    display: flex; }

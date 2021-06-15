@@ -123,6 +123,18 @@ exports.w = watchfile;
 // exports.all = series(concat_css , mini_css);
 
 
+const sass = require('gulp-sass');
+
+function sass_style(){
+    return src('sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(dest('css'))
+}
+
+exports.styles = sass_style;
+
+
+
 
 
 
