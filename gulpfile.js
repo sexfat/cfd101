@@ -127,7 +127,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');// 回朔到原本開發的檔案
 
 function sass_style(){
-    return src('sass/*.scss')
+    return src('dev/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.write())
@@ -135,7 +135,7 @@ function sass_style(){
 //     .pipe(rename({
 //         extname: '.min.css'
 //    })) // 改副檔名
-    .pipe(dest('css'))
+    .pipe(dest('dist/css'))
 }
 
 
@@ -146,22 +146,22 @@ function sass_style(){
 const fileinclude = require('gulp-file-include');
 
 function html(){
-    return src(['dev/*.html' , 'dev/**/*.html'])
+    return src(['dev/*.html'])
     .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
     }))
-    .pipe(dest('./'))
+    .pipe(dest('dist'))
 }
 
 
 // 監看 sass html 變動
-function watch_all(){
-    watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
-    watch(['dev/*.html' , 'dev/**/*.html'] , html)
-    //console.log('執行成功')
-    // watch('js/**/*.js' ,任務)
-} 
+// function watch_all(){
+//     watch(['dev/sass/**/*.css' , 'dev/sass/*.scss'] , sass_style)
+//     watch(['dev/*.html' , 'dev/**/*.html'] , html)
+//     //console.log('執行成功')
+//     // watch('js/**/*.js' ,任務)
+// } 
 
 // exports.default = watch_all;
 
@@ -172,12 +172,12 @@ const reload = browserSync.reload;
 function browser(done){
    browserSync.init({
      server: {
-         baseDir : "./",
+         baseDir : "dist",
          index: 'index.html'
      },
      port : 3000  
    });
-   watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style).on('change' , reload)
+   watch(['dev/sass/**/*.css' , 'dev/sass/*.scss'] , sass_style).on('change' , reload)
    watch(['dev/*.html' , 'dev/**/*.html'] , html).on('change' , reload)
    done();
 }
