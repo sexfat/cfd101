@@ -122,13 +122,16 @@ exports.w = watchfile;
 
 // exports.all = series(concat_css , mini_css);
 
-
+// sass 編譯
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');// 回朔到原本開發的檔案
 
 function sass_style(){
     return src('sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS({compatibility: 'ie10'}))
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    //.pipe(cleanCSS({compatibility: 'ie10'}))
 //     .pipe(rename({
 //         extname: '.min.css'
 //    })) // 改副檔名
@@ -140,7 +143,7 @@ function watchsass(){
     watch(['sass/**/*.css' , 'sass/*.scss'] , sass_style)
     //console.log('執行成功')
     // watch('js/**/*.js' ,任務)
-}
+} 
 
 exports.styles = watchsass;
 

@@ -1,7 +1,9 @@
+@import 'layout/header';
+
 body {
   margin: 0;
   .wrapper{
-      width: 100%;
+      width: 1200px;
       display: flex;
       .item{
           justify-self: start;
