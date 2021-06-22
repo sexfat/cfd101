@@ -1,10 +1,10 @@
-import $ from 'jquery'; // jquery 
+// import $ from 'jquery'; // jquery 
 import TweenMax from 'gsap'; // gsap
 import '../sass/style.scss';
 // import '../css/header.css';
 // import '../css/footer.css';
 
-$('body').css('background-color' , 'green');
+$('body').css('background-color' , '#eee');
 
 
 TweenMax.to('.box' , 2,{
