@@ -4,11 +4,12 @@ import '../sass/style.scss';
 // import '../css/header.css';
 // import '../css/footer.css';
 
-// $('body').css('background-color' , 'green');
+$('body').css('background-color' , 'green');
 
 
 TweenMax.to('.box' , 2,{
    x: 400,
+   y: 300,
    rotation : 180,
    backgroundColor : 'white' ,
    borderRadius: '50%'   
