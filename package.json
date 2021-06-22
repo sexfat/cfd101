@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sexfat/cfd101#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.6.0",
