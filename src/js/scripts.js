@@ -1,8 +1,10 @@
 import $ from 'jquery'; // jquery 
+import '../nav/nav.css';
+import '../nav/nav.js';
 import TweenMax from 'gsap'; // gsap
-import '../css/style.css';
-import '../css/header.css';
-import '../css/footer.css';
+// import '../css/style.css';
+// import '../css/header.css';
+// import '../css/footer.css';
 
 // $('body').css('background-color' , 'green');
 
