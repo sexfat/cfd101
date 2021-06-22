@@ -12,3 +12,7 @@ body {
 header {
     height: 100px;
 }
+footer {
+    height: 100px;
+    background-color: rgb(252, 118, 118);
+}

@@ -2,6 +2,7 @@ import $ from 'jquery'; // jquery
 import TweenMax from 'gsap'; // gsap
 import '../css/style.css';
 import '../css/header.css';
+import '../css/footer.css';
 
 // $('body').css('background-color' , 'green');
 
