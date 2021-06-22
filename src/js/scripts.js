@@ -1,8 +1,6 @@
 import $ from 'jquery'; // jquery 
-import '../nav/nav.css';
-import '../nav/nav.js';
 import TweenMax from 'gsap'; // gsap
-// import '../css/style.css';
+import '../sass/style.scss';
 // import '../css/header.css';
 // import '../css/footer.css';
 
