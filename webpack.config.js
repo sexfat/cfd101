@@ -72,9 +72,12 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery'
           })
-    ],
-     // 對應的插件
-     
+    ],// 對應的插件
+    resolve: {
+        alias: {
+           vue: 'vue/dist/vue.js'
+        }
+      }, //解決vue jquery 路徑
     devServer: {
         contentBase: './dist',
         host: 'localhost',
