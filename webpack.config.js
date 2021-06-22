@@ -4,10 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
-    entry: './src/js/scripts.js',// 入口文件
+    entry: {
+     index: './src/js/scripts.js'
+
+},// 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },              // 出口文件
     mode: 'production',      // 開發模式配置 development
     module: {
@@ -29,7 +32,7 @@ module.exports = {
     },             // 處裡對應模組
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "./style.css" // 產生出來的css
+            filename: "./[name].css" // 產生出來的css
         })
     ], // 對應的插件
     // devServer: {},           // 服務器配置
