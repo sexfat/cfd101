@@ -19,7 +19,7 @@ TweenMax.to('.box' , 2,{
 new Vue({
    el : '#app',
    data : {
-      message : 'hello vue'
+      message : 'hello vue ++'
    }
 
 

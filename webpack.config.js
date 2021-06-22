@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
-const webpack  = require('webpack');
+const webpack = require('webpack');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 
 
@@ -71,13 +72,18 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-          })
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, './src/layout/nav.html'),
+            location: 'nav',
+            template_filename: ['index.html']
+        })
     ],// 對應的插件
     resolve: {
         alias: {
-           vue: 'vue/dist/vue.js'
+            vue: 'vue/dist/vue.js'
         }
-      }, //解決vue jquery 路徑
+    }, //解決vue jquery 路徑
     devServer: {
         contentBase: './dist',
         host: 'localhost',
