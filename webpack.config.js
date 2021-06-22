@@ -42,8 +42,9 @@ module.exports = {
             inject  : 'body', //預設<body> js </body>  head or body
             template : './src/index.html',
             //來源
-            filename : 'index.html'
+            filename : 'index.html',
             // 目的地
+            title: '首頁'
         })
     ], // 對應的插件
     // devServer: {},           // 服務器配置
